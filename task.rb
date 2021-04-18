@@ -163,8 +163,8 @@ def initialize(name:, age:, gender:)
       年齢：#{@age}
       性別：#{@gender}
     TEXT
-    end
   end
+end
 
 
 def q17
@@ -189,8 +189,8 @@ def introduce
       puts "こんにちは，#{@name}と申します。宜しくお願いいたします。"
     elsif @age < 32
       puts "はいさいまいど〜，#{@name}です！！！"
-    end
   end
+end
 
 def q18
   # ここは変更しないで下さい
@@ -218,31 +218,32 @@ end
 class UserQ20
   # 以下に回答を記載
 attr_reader :name, :age
-def initialize(name, age)
+def initialize(name:, age:)
   @name = name
   @age = age
-end
 end
 
 class Zoo
   # 以下に回答を記載
 def initialize(name:, entry_fee:)
-  @name = name
   @entry_fee = entry_fee
 end
 
 def info_entry_fee(user)
-   entry_fee = case user.age
-   when 0..5 then
+   fee = case user.age
+   when 0..5 
     @entry_fee [:infant]
-   when 6..12 then
+   when 6..12 
     @entry_fee [:children]
-   when 13..64 then
+   when 13..64 
     @entry_fee [:adult]
-   when 65..120 then
+   when 65..120 
     @entry_fee [:senior]
-    puts "#{user.name}さんの入場料金は#{@entry_fee}です。"
+   end
+    puts "#{user.name}さんの入場料金は#{fee}円です。"
   end
+
+
 end
 
 
@@ -261,4 +262,5 @@ def q20
     zoo.info_entry_fee(user)
    end
  end
+end
 end
