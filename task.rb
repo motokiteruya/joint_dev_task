@@ -217,12 +217,32 @@ end
 
 class UserQ20
   # 以下に回答を記載
-
+attr_reader :name, :age
+def initialize(name, age)
+  @name = name
+  @age = age
+end
 end
 
 class Zoo
   # 以下に回答を記載
+def initialize(name:, entry_fee:)
+  @name = name
+  @entry_fee = entry_fee
+end
 
+def info_entry_fee(user)
+   entry_fee = case user.age
+   when 0..5 then
+    @entry_fee [:infant]
+   when 6..12 then
+    @entry_fee [:children]
+   when 13..64 then
+    @entry_fee [:adult]
+   when 65..120 then
+    @entry_fee [:senior]
+    puts "#{user.name}さんの入場料金は#{@entry_fee}です。"
+  end
 end
 
 
@@ -239,5 +259,6 @@ def q20
 
   users.each do |user|
     zoo.info_entry_fee(user)
-  end
+   end
+ end
 end
