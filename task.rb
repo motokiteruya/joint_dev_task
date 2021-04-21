@@ -222,8 +222,6 @@ class UserQ20
    @name = name
    @age = age
   end
-
-
 end
 
 class Zoo
@@ -231,7 +229,6 @@ class Zoo
   def initialize(name:, entry_fee:)
     @entry_fee = entry_fee
   end
-
   def info_entry_fee(user)
     fee = case user.age
     when 0..5 
@@ -245,7 +242,6 @@ class Zoo
     end
     puts "#{user.name}さんの入場料金は#{fee}円です。"
   end
-
 end
 
 
@@ -264,5 +260,3 @@ def q20
     zoo.info_entry_fee(user)
    end
  end
-end
-
